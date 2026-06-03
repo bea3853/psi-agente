@@ -1,0 +1,14 @@
+Plaintext
+
+
+├── netlify/
+│   └── functions/
+│       └── chat.js          # Nosso "back-end" seguro que fala com a Groq
+├── public/
+│   ├── css/
+│   │   └── style.css        # Onde a mágica do Glassmorphism acontece
+│   ├── js/
+│   │   └── main.js          # Manipulação do DOM e fetch na nossa função
+│   └── index.html           # Estrutura semântica e moderna
+├── netlify.toml             # Configuração de rotas do Netlify
+└── package.json             # Dependências da nossa função (como o SDK da Groq)

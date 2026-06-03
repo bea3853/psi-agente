@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psi_AI // Conexão e Foco</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonte moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Elementos de fundo para o efeito de vidro brilhar -->
+    <div class="bg-blur blur-1"></div>
+    <div class="bg-blur blur-2"></div>
+
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="avatar-status">
+                <div class="avatar">♐</div>
+                <div class="status-info">
+                    <h2>Clarice</h2>
+                    <span class="status-tag">Online e te ouvindo</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="chat-messages" id="chatContainer">
+            <div class="message system">
+                <p>Oi! Que bom que você apareceu. Me conta, como tá essa cabeça hoje? Pode desabafar, o espaço é nosso. 💜</p>
+            </div>
+        </main>
+
+        <form class="chat-input-area" id="chatForm">
+            <input type="text" id="userInput" placeholder="Desabafe aqui ou fale sobre aquela matéria que tá travando tudo..." required autocomplete="off">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
