@@ -1,0 +1,12 @@
+{
+  "name": "psi-agente",
+  "version": "1.0.0",
+  "description": "Agente de IA com Groq e Netlify Functions",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Sem etapa de build necessária para o front-end'"
+  },
+  "dependencies": {
+    "groq-sdk": "^0.9.0"
+  }
+}
