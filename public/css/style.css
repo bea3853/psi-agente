@@ -16,13 +16,14 @@
 }
 
 body {
-    /* Corrigido: adicionado o url() e ajustado o caminho para a pasta public */
+   
     
     
     /* Garante que a imagem cubra a tela toda sem distorcer e sem repetir */
+     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+   
 
     /* Seu restante do código */
     background-color: var(--bg-color);
