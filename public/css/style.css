@@ -16,6 +16,240 @@
 }
 
 body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 1. VÍDEO FIXO NA CAMADA MAIS BAIXA DE TODAS */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; 
+    pointer-events: none;
+}
+
+/* 2. CAMADA DE VIDRO ROXO QUE COBRE O VÍDEO */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 12, 16, 0.75); /* Mantém o tom roxo escuro */
+    backdrop-filter: blur(10px);        /* Aplica o efeito vidro/fosco diretamente no vídeo */
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -1; 
+}
+
+/* Esferas de luz no fundo (ficam entre o vidro roxo e o chat) */
+.bg-blur {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 1;
+}
+.blur-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent);
+    top: 20%;
+    left: 15%;
+    opacity: 0.3;
+}
+.blur-2 {
+    width: 250px;
+    height: 250px;
+    background: #ec4899; /* Rosa/Neon */
+    bottom: 20%;
+    right: 15%;
+    opacity: 0.2;
+}
+
+/* Container Glassmorphism (No topo de tudo) */
+.chat-container {
+    width: 90%;
+    max-width: 480px;
+    height: 85vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    z-index: 10; 
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.chat-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.avatar-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--accent), #ec4899);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.status-info h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.status-tag {
+    font-size: 12px;
+    color: #34d399; /* Verde online */
+}
+
+/* Área de Mensagens */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Custom Scrollbar */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 10px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.message.system {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    align-self: flex-start;
+    border-top-left-radius: 4px;
+}
+
+.message.user {
+    background: linear-gradient(135deg, var(--accent), #7c3aed);
+    align-self: flex-end;
+    border-top-right-radius: 4px;
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+/* Input Form */
+.chat-input-area {
+    padding: 16px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.chat-input-area input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 14px 18px;
+    border-radius: 14px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.chat-input-area input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+.chat-input-area button {
+    background: var(--text-primary);
+    color: var(--bg-color);
+    border: none;
+    padding: 0 20px;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chat-input-area button:hover {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* :root {
+    --bg-color: #0b0c10;
+    --glass-bg: rgba(15, 17, 26, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent: #8b5cf6; /* Roxo moderno */
+    --accent-glow: rgba(139, 92, 246, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
    
     
     
@@ -434,4 +668,4 @@ body {
     backdrop-filter: blur(10px);        /* Dá o efeito fosco/vidro no vídeo */
     -webkit-backdrop-filter: blur(10px);
     z-index: -1; /* Fica na frente do vídeo, mas atrás do seu chat */
-}
+} */
