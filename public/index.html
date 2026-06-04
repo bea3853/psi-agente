@@ -62,9 +62,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Elementos de fundo para o efeito de vidro brilhar -->
-    <div class="bg-blur blur-1"></div>
-    <div class="bg-blur blur-2"></div>
+<body>
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="public/video.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-overlay"></div>
 
     <div class="chat-container">
         <header class="chat-header">
@@ -90,5 +93,6 @@
     </div>
 
     <script src="js/main.js"></script>
+</body>
 </body>
 </html> -->
