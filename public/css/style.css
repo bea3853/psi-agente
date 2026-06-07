@@ -45,7 +45,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(11, 12, 16, 0.75); /* Mantém o tom roxo escuro */
+    background: rgba(11, 12, 16, 0.15); /* Mantém o tom roxo escuro */
     backdrop-filter: blur(10px);        /* Aplica o efeito vidro/fosco diretamente no vídeo */
     -webkit-backdrop-filter: blur(10px);
     z-index: -1; 
