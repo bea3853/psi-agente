@@ -50,7 +50,7 @@ chatForm.addEventListener('submit', async (e) => {
             // Salva a resposta da IA no histórico para manter o contexto na próxima iteração
             conversationHistory.push({ role: "assistant", content: data.reply });
         } else {
-            appendMessage("Putz, deu um bugzinho aqui na minha rede. Pode repetir? 🥺", 'system');
+            appendMessage("Putz, deu um bugzinho aqui na minha rede. Pode repetir?", 'system');
         }
 
     } catch (error) {
