@@ -71,7 +71,7 @@ DIRETRIZES DE CONVERSA:
         // Mudamos para o modelo 'llama-3.3-70b-versatile', que é o padrão mais estável e rápido na camada gratuita da Groq hoje
         const chatCompletion = await groq.chat.completions.create({
             messages: messages,
-            model: "llama-3.3-70b-versatile",
+            model: "openai/gpt-oss-120b",
             temperature: 0.7,
             max_tokens: 400,
         });
